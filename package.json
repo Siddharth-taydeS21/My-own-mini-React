@@ -1,0 +1,24 @@
+{
+  "name": "my-own-react",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/Siddharth-taydeS21/My-own-mini-React#readme",
+  "bugs": {
+    "url": "https://github.com/Siddharth-taydeS21/My-own-mini-React/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Siddharth-taydeS21/My-own-mini-React.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "scripts": {
+    "start": "parcel index.html"
+  },
+  "devDependencies": {
+    "@babel/core": "7.22.5",
+    "@babel/preset-react": "7.22.5",
+    "parcel": "2.9.2"
+  }
+}
