@@ -1,4 +1,4 @@
-import React from '/React'
+import React, { useState } from './React'
 import { render } from './ReactDom'
 
 const root = document.getElementById('root')
@@ -12,40 +12,16 @@ const container = <div className='container' id='parent' title='parent container
 
 const fruits = ['apple', 'mango', 'banana', 'peru'];
 
-function Card({ title, image, brand, price }) {
-    return (
-        <div className="card">
-            <img src={image} alt={title} />
-            <div className="card-content">
-                <h3>{title}</h3>
-                <p>{brand ? brand : 'Example brand'}</p>
-                <p>
-                    <b>${price}</b>
-                </p>
-            </div>
+export function App() {
+    const [count, setCount] = useState(1);
+
+    return(
+        <div>
+            <h1 style={{textAlign: 'center', userSelect: 'none'}} onclick={() => {
+              setCount(count + 1) 
+            }}>{count}</h1>
         </div>
     )
 }
 
-fetch('https://dummyjson.com/products')
-    .then((res) => res.json())
-    .then((data) => {
-        render(
-            <div className="container">
-                {data.products.map((product) => {
-                    return (
-                        <Card
-                            key={product.id}
-                            title={product.title}
-                            brand={product.brand}
-                            price={product.price}
-                            image={product.thumbnail}
-                        />
-                    )
-                })}
-            </div>,
-            document.getElementById('root')
-        )
-    })
-
-// render([container, 'hii', <Card title='My card' />], root);
+render(<App />, root)
